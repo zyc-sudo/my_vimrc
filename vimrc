@@ -71,6 +71,8 @@ hi SpellCap ctermfg=118 ctermbg=124
 let g:ycm_autoclose_preview_window_after_completion=1
 " map \g to got to definition
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" map \y to get Doc
+map <leader>y  :YcmCompleter GetDoc<CR>
 " Enable folding
 set foldmethod=indent
 set foldlevel=99

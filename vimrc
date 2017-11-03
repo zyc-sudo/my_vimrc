@@ -29,7 +29,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 "Plugin 'jelera/vim-javascript-syntax'
-"Plugin 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tmhedberg/SimpylFold'
@@ -92,10 +93,13 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
+
 au BufNewFile,BufRead *.js,*.html,*.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
+    \ set autoindent |
+    \ set fileformat=unix |
 
 function! StartUp()
 	if 0 == argc()
@@ -109,3 +113,5 @@ let g:ycm_server_log_level = 'debug'
 "ignore line too long
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E225,E265'
+"Apply JSX syntax for .js
+let g:jsx_ext_required = 0

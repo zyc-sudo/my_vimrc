@@ -27,19 +27,31 @@ Plugin 'VundleVim/Vundle.vim'
 " different version somewhere else.
 "Plugin 'ascenator/L9', {'name': 'newL9'}
 
+"Tree
 Plugin 'scrooloose/nerdtree'
 "Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
+"jsx react
 Plugin 'mxw/vim-jsx'
+"Indent guid
 Plugin 'nathanaelkane/vim-indent-guides'
+"auto complete
 Plugin 'Valloric/YouCompleteMe'
+"Folding
 Plugin 'tmhedberg/SimpylFold'
+"Python auto indent
 Plugin 'vim-scripts/indentpython.vim'
+"error highlight
 Plugin 'scrooloose/syntastic'
+"Python standard
 Plugin 'nvie/vim-flake8'
+"Git
 Plugin 'tpope/vim-fugitive'
+" Bottom bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" tmux
+Bundle 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -54,6 +54,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 " tmux
 Bundle 'christoomey/vim-tmux-navigator'
+"surrond 
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

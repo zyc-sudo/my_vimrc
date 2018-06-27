@@ -50,6 +50,8 @@ Plugin 'tpope/vim-fugitive'
 " Bottom bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" Vim surround
+Plugin 'tpope/vim-surround'
 " tmux
 Bundle 'christoomey/vim-tmux-navigator'
 
@@ -86,6 +88,8 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " map \y to get Doc
 map <leader>y  :YcmCompleter GetDoc<CR>
+" use the python in $PATH, work with virtualenv
+let g:ycm_python_binary_path='python'
 " Enable folding
 set foldmethod=indent
 set foldlevel=99

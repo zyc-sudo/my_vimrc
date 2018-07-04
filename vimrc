@@ -54,8 +54,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 " tmux
 Bundle 'christoomey/vim-tmux-navigator'
-"surrond 
-Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,6 +77,7 @@ set is
 set backspace=2
 set ruler
 set showmode
+set pastetoggle=<F3>
 let python_highlight_all=1
 syntax on
 colorscheme peachpuff

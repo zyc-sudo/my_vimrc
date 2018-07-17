@@ -1,3 +1,4 @@
+set updatetime=100
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -54,6 +55,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 " tmux
 Bundle 'christoomey/vim-tmux-navigator'
+" Multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
+" Vim gitgutter
+Plugin 'airblade/vim-gitgutter'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

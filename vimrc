@@ -136,5 +136,6 @@ let g:ycm_server_log_level = 'debug'
 "ignore line too long
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E225,E265'
+let g:syntastic_python_checkers=['python']
 "Apply JSX syntax for .js
 let g:jsx_ext_required = 0

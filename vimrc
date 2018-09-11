@@ -78,6 +78,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 set nu
 set background=dark
+colorscheme peachpuff
 set hlsearch
 set is
 set backspace=2
@@ -86,9 +87,9 @@ set showmode
 set pastetoggle=<F3>
 let python_highlight_all=1
 syntax on
-colorscheme peachpuff
 hi SpellBad ctermfg=118 ctermbg=124
 hi SpellCap ctermfg=118 ctermbg=124 
+hi Search ctermfg=202 ctermbg=yellow
 
 let g:ycm_autoclose_preview_window_after_completion=1
 " map \g to got to definition

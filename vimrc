@@ -59,6 +59,8 @@ Bundle 'christoomey/vim-tmux-navigator'
 Plugin 'terryma/vim-multiple-cursors'
 " Vim gitgutter
 Plugin 'airblade/vim-gitgutter'
+" Color
+Plugin 'morhetz/gruvbox'
 
 
 " All of your Plugins must be added before the following line
@@ -78,7 +80,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 set nu
 set background=dark
-colorscheme peachpuff
+colorscheme gruvbox
 set hlsearch
 set is
 set backspace=2
@@ -89,7 +91,6 @@ let python_highlight_all=1
 syntax on
 hi SpellBad ctermfg=118 ctermbg=124
 hi SpellCap ctermfg=118 ctermbg=124 
-hi Search ctermfg=202 ctermbg=yellow
 
 let g:ycm_autoclose_preview_window_after_completion=1
 " map \g to got to definition

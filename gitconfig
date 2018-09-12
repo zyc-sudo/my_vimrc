@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = yucheng
+	email = 
+[alias]
+	glog=log --graph --pretty=format:'%<|(18)%Cred%ar %<|(38)%Cblue%an %Creset%s %Cgreen%d %Creset(%h)'

@@ -61,6 +61,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
 " Color
 Plugin 'morhetz/gruvbox'
+" Repeat .
+Plugin 'tpope/vim-repeat'
 
 
 " All of your Plugins must be added before the following line
@@ -141,3 +143,5 @@ let g:syntastic_python_flake8_args='--ignore=E501,E225,E265'
 let g:syntastic_python_checkers=['python']
 "Apply JSX syntax for .js
 let g:jsx_ext_required = 0
+"Repeat.vim
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)

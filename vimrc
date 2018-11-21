@@ -148,6 +148,9 @@ let g:jsx_ext_required = 0
 "Repeat.vim
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
+" For recognize Jenkinsfile as Groovy
+au BufNewFile,BufRead Jenkinsfile setf groovy
+
 " Jump to the next or previous line that has the same level or a lower
 " level of indentation than the current line.
 "

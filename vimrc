@@ -30,10 +30,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 "Tree
 Plugin 'scrooloose/nerdtree'
-"Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
-"jsx react
-Plugin 'mxw/vim-jsx'
 "Indent guid
 Plugin 'nathanaelkane/vim-indent-guides'
 "auto complete
@@ -65,6 +61,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'tell-k/vim-autopep8'
 " Repeat .
 Plugin 'tpope/vim-repeat'
+" go
+Plugin 'fatih/vim-go'
 
 
 " All of your Plugins must be added before the following line
@@ -148,9 +146,6 @@ let g:jsx_ext_required = 0
 "Repeat.vim
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
-" For recognize Jenkinsfile as Groovy
-au BufNewFile,BufRead Jenkinsfile setf groovy
-
 " Jump to the next or previous line that has the same level or a lower
 " level of indentation than the current line.
 "
@@ -197,3 +192,4 @@ onoremap <silent> [l :call NextIndent(0, 0, 0, 1)<CR>
 onoremap <silent> ]l :call NextIndent(0, 1, 0, 1)<CR>
 onoremap <silent> [L :call NextIndent(1, 0, 1, 1)<CR>
 onoremap <silent> ]L :call NextIndent(1, 1, 1, 1)<CR>
+au BufNewFile,BufRead Jenkinsfile setf groovy

@@ -135,6 +135,7 @@ function! StartUp()
 endfunction
 
 autocmd VimEnter * call StartUp()
+" YCM
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 "ignore line too long
@@ -193,3 +194,12 @@ onoremap <silent> ]l :call NextIndent(0, 1, 0, 1)<CR>
 onoremap <silent> [L :call NextIndent(1, 0, 1, 1)<CR>
 onoremap <silent> ]L :call NextIndent(1, 1, 1, 1)<CR>
 au BufNewFile,BufRead Jenkinsfile setf groovy
+
+" go
+let g:go_def_mode = 'gopls'
+" map \t to 
+map <leader>t  : GoDebugTest <CR>
+" map \d to 
+map <leader>d  : GoDebugStart <CR>
+" map \x to 
+map <leader>x  : GoDebugStop <CR>

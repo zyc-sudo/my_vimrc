@@ -203,3 +203,6 @@ map <leader>t  : GoDebugTest <CR>
 map <leader>d  : GoDebugStart <CR>
 " map \x to 
 map <leader>x  : GoDebugStop <CR>
+
+" Don't clear the clipboard on quiting
+autocmd VimLeave * call system("xsel -ib", getreg('+'))

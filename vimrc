@@ -91,8 +91,8 @@ set showmode
 set pastetoggle=<F3>
 let python_highlight_all=1
 syntax on
-hi SpellBad ctermfg=118 ctermbg=124
-hi SpellCap ctermfg=118 ctermbg=124 
+"hi SpellBad ctermfg=118 ctermbg=124
+"hi SpellCap ctermfg=118 ctermbg=124 
 
 let g:ycm_autoclose_preview_window_after_completion=1
 " map \g to got to definition
@@ -100,7 +100,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " map \y to get Doc
 map <leader>y  :YcmCompleter GetDoc<CR>
 " use the python in $PATH, work with virtualenv
-let g:ycm_python_binary_path='python'
+let g:ycm_python_binary_path='python3'
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -111,6 +111,8 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " UTF-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
 set encoding=utf-8
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -206,3 +208,8 @@ map <leader>x  : GoDebugStop <CR>
 
 " Don't clear the clipboard on quiting
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
+" vim-go debugger
+let g:go_debug_windows = {
+      \ 'vars':       'rightbelow 60vnew',
+      \ 'stack':      'rightbelow 10new',
+\ }

@@ -52,9 +52,10 @@ Plugin 'tpope/vim-surround'
 " tmux
 Bundle 'christoomey/vim-tmux-navigator'
 " Multiple cursors
-Plugin 'terryma/vim-multiple-cursors'
-" Vim gitgutter
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'terryma/vim-multiple-cursors'
+" Vim gitgutter for sign column
+"Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
 " Color
 Plugin 'morhetz/gruvbox'
 " AutoPEP8 fix
@@ -63,7 +64,12 @@ Plugin 'tell-k/vim-autopep8'
 Plugin 'tpope/vim-repeat'
 " go
 Plugin 'fatih/vim-go'
-
+" show indentation lines
+Plugin 'Yggdroot/indentLine'
+" Yaml fold
+Plugin 'pedrohdz/vim-yaml-folds'
+" ALE linting
+Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -123,7 +129,7 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
 
-au BufNewFile,BufRead *.js,*.html,*.css
+au BufNewFile,BufRead *.js,*.html,*.css,*.yaml,*.yml
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
@@ -142,8 +148,9 @@ let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 "ignore line too long
 let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501,E225,E265'
-let g:syntastic_python_checkers=['python']
+let g:syntastic_python_flake8_args='--ignore=E225,E265'
+let g:syntastic_python_checkers=['python3']
+let g:autopep8_max_line_length=120
 "Apply JSX syntax for .js
 let g:jsx_ext_required = 0
 "Repeat.vim
@@ -213,3 +220,24 @@ let g:go_debug_windows = {
       \ 'vars':       'rightbelow 60vnew',
       \ 'stack':      'rightbelow 10new',
 \ }
+
+" add yaml stuffs
+set foldlevelstart=20
+
+" ALE
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_python_auto_pipenv = 1
+let g:ale_pattern_options = {
+\   '.*\.go$': {'ale_enabled': 0},
+\   '.*some/folder/.*\.go$': {'ale_enabled': 0},
+\ }
+let g:ale_python_pylint_options = '--max-line-length=120 --disable=R0902,C0103,C0111' 
+set updatetime=100
+
+"Fix json not showing double quotes when Plugin 'Yggdroot/indentLine' is On
+let g:vim_json_conceal=0
+let g:markdown_syntax_conceal=0
+

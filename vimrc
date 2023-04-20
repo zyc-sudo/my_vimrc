@@ -156,6 +156,7 @@ let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E225,E265'
 let g:syntastic_python_checkers=['python3']
 let g:autopep8_max_line_length=120
+let g:autopep8_diff_type='vertical'
 "Apply JSX syntax for .js
 let g:jsx_ext_required = 0
 "Repeat.vim

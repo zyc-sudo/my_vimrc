@@ -240,7 +240,7 @@ let g:ale_pattern_options = {
 \   '.*\.go$': {'ale_enabled': 0},
 \   '.*some/folder/.*\.go$': {'ale_enabled': 0},
 \ }
-let g:ale_python_pylint_options = '--max-line-length=120 --disable=R0902,C0103,C0111 --extension-pkg-whitelist=cv2 --generated-members=numpy.*,torch.*'
+let g:ale_python_pylint_options = '--max-line-length=120 --disable=R0902,C0103,C0111 --extension-pkg-whitelist=cv2 --generated-members=numpy.*,torch.*,cv2.*'
 let g:ale_python_flake8_options = '--max-line-length=120 --disable=R0902,C0103,C0111' 
 set updatetime=100
 

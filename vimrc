@@ -74,6 +74,8 @@ Plugin 'dense-analysis/ale'
 Plugin 'segeljakt/vim-silicon'
 " Rust
 Plugin 'rust-lang/rust.vim'
+" LaTex
+Plugin 'lervag/vimtex'
 
 
 " All of your Plugins must be added before the following line
@@ -99,7 +101,10 @@ set is
 set backspace=2
 set ruler
 set showmode
-set pastetoggle=<F3>
+"set pastetoggle=<F3>
+nnoremap <silent> <f3> :set paste!<cr>
+inoremap <silent> <f3> <esc>:set paste!<cr>i
+
 let python_highlight_all=1
 syntax on
 "hi SpellBad ctermfg=118 ctermbg=124
@@ -123,9 +128,9 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " UTF-8
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-set termencoding=utf-8
+"set termencoding=utf-8
 set encoding=utf-8
-au BufNewFile,BufRead *.py
+au BufNewFile,BufRead *.py,*.lua
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
@@ -134,7 +139,7 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
 
-au BufNewFile,BufRead *.js,*.html,*.css,*.yaml,*.yml
+au BufNewFile,BufRead *.js,*.html,*.css,*.yaml,*.yml,*.json
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
@@ -216,6 +221,8 @@ let g:go_def_mode = 'gopls'
 map <leader>t  : GoDebugTest <CR>
 " map \d to 
 map <leader>d  : GoDebugStart <CR>
+" map \c to 
+map <leader>c  : GoDebugContinue <CR>
 " map \x to 
 map <leader>x  : GoDebugStop <CR>
 
@@ -226,6 +233,7 @@ let g:go_debug_windows = {
       \ 'vars':       'rightbelow 60vnew',
       \ 'stack':      'rightbelow 10new',
 \ }
+let g:go_debug=['shell-commands']
 
 " add yaml stuffs
 set foldlevelstart=20
@@ -240,7 +248,7 @@ let g:ale_pattern_options = {
 \   '.*\.go$': {'ale_enabled': 0},
 \   '.*some/folder/.*\.go$': {'ale_enabled': 0},
 \ }
-let g:ale_python_pylint_options = '--max-line-length=120 --disable=R0902,C0103,C0111 --extension-pkg-whitelist=cv2 --generated-members=numpy.*,torch.*,cv2.*'
+let g:ale_python_pylint_options = '--max-line-length=120 --disable=R0902,C0103,C0111 --extension-pkg-whitelist=cv2 --generated-members=numpy.*,torch.*,cv2.*,Cython.*,onxx.*'
 let g:ale_python_flake8_options = '--max-line-length=120 --disable=R0902,C0103,C0111' 
 set updatetime=100
 
@@ -265,3 +273,4 @@ let g:silicon = {
       \   'window-controls':       v:true,
       \ }
 let g:silicon['output'] = '~/Pictures/silicon/silicon-{time:%Y-%m-%d-%H%M%S}.png'
+let g:vimtex_compiler_method = 'latexmk'

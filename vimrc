@@ -95,6 +95,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 set nu
 set background=dark
+let g:gruvbox_contrast_dark="soft"
 colorscheme gruvbox
 set hlsearch
 set is

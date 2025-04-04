@@ -116,6 +116,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " map \y to get Doc
 map <leader>y  :YcmCompleter GetDoc<CR>
+
 " use the python in $PATH, work with virtualenv
 let g:ycm_python_binary_path='python3'
 " Enable folding
@@ -140,7 +141,7 @@ au BufNewFile,BufRead *.py,*.lua
     \ set autoindent |
     \ set fileformat=unix |
 
-au BufNewFile,BufRead *.js,*.html,*.css,*.yaml,*.yml,*.json
+au BufNewFile,BufRead *.js,*.html,*.css,*.yaml,*.yml,*.json,*.ts,*tsx
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
